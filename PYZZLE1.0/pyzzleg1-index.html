@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pyzzle-style.css">
+  <script src="pyzzle-script.js" defer></script>
+  <title>Pyzzle Game Beginner 1</title>
+</head>
+<body>
+  <a href="pyzzle-codegames.html">
+    <button class="btn btn1">Back</button>
+  </a>
+  <div style="text-align:center;"> 
+    <a style="width:50%; padding:15px; background-color:black; color:white;" href="Homepyzzle-main.html">HOME</a> 
+    </div> 
+  <div class="container" style="font-size:120%;">Put here your Answer:
+    <p class="draggable" draggable="true" style="font-size:120%;"># You are going to put here the correct order of the Pygame.</p>
+  </div>
+  <div class="container">
+    <p class="draggable" draggable="true" id="2" style="font-size:120%;">pygame.init()</p>
+    <p class="draggable" draggable="true" id="1" style="font-size:120%;">import pygame</p>
+    <p class="draggable" draggable="true" id="4" style="font-size:120%;">
+      running = True
+      <br>
+      <br>
+      while running:</p>
+    <p class="draggable" draggable="true" id="3" style="font-size:120%;">screen = pygame.display.set_mode([500, 500])</p>
+    <p class="draggable" draggable="true" id="6" style="font-size:120%;">screen.fill((255, 255, 255))</p>
+    <p class="draggable" draggable="true" id="5" style="font-size:120%;">for event in pygame.event.get():
+      <br>
+      <br>
+      if event.type == pygame.QUIT:
+      <br>
+      <br>
+          running = False</p>
+          <p class="draggable" draggable="true" id="8" style="font-size:120%;">pygame.display.flip()
+          </p>
+    <p class="draggable" draggable="true" id="7" style="font-size:120%;">pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)</p>
+    
+    <p class="draggable" draggable="true" id="9" style="font-size:120%;">pygame.quit()</p>
+  </div>
+
+  <div class="container">
+    <div style="text-align:center;"> 
+      <a style="width:50%; padding:15px; background-color:black; color:white;" button onclick="doSomething()">CHECK</a> 
+      </div> 
+      
+    <div style="text-align:center;"> 
+        <a style="width:50%; padding:15px; background-color:black; color:white;" href="pyzzleg1-index.html">RESET</a> 
+        </div> 
+  
+  </div>
+ 
+<script>   
+    function doSomething(){
+      document.getElementById("1").innerHTML = "#1 import pygame";
+      document.getElementById("2").innerHTML = "#2 pygame.init()";
+      document.getElementById("3").innerHTML = "#3 screen = pygame.display.set_mode([500, 500])";
+      document.getElementById("4").innerHTML = "#4 running = True        while running:";
+      document.getElementById("5").innerHTML = "#5 for event in pygame.event.get() for event in pygame.event.get():   if event.type == pygame.QUIT:   running = False";
+      document.getElementById("6").innerHTML = "#6 screen.fill((255, 255, 255))";
+      document.getElementById("7").innerHTML = "#7 pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)";
+      document.getElementById("8").innerHTML = "#8 pygame.display.flip()";
+      document.getElementById("9").innerHTML = "#9 pygame.quit()";
+    }
+  </script>
+</body>
+</html>
