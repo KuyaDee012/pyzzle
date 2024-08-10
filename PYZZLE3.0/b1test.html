@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Baby Shapes Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 2px solid #000;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .container label {
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .shape {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            font-size: 18px;
+            cursor: move;
+        }
+
+        .circle {
+            background-color: #3498db;
+            border-radius: 50%;
+        }
+
+        .square {
+            background-color: #e74c3c;
+            border-radius: 5px;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 80px solid #2ecc71;
+        }
+
+        #checkButton, #resetButton {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .correct {
+            background-color: green;
+        }
+
+        .incorrect {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="circleContainer">
+    <label>Put Circles Here</label>
+    <!-- Circle shapes will be dynamically added here -->
+</div>
+
+<div class="container" id="squareContainer">
+    <label>Put Squares Here</label>
+    <!-- Square shapes will be dynamically added here -->
+</div>
+
+<div class="container" id="triangleContainer">
+    <label>Put Triangles Here</label>
+    <!-- Triangle shapes will be dynamically added here -->
+</div>
+
+<button id="checkButton">Check Placement</button>
+<button id="resetButton">Reset</button>
+
+<script>
+    const shapes = ['circle', 'square', 'triangle'];
+
+    function createRandomShape(containerId) {
+        const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+        const shapeElement = document.createElement('div');
+        shapeElement.classList.add('shape', randomShape);
+
+        // Random position within the specified container
+        const containerRect = document.getElementById(containerId).getBoundingClientRect();
+        const x = Math.floor(containerRect.width * Math.random());
+        const y = Math.floor(containerRect.height * Math.random());
+
+        shapeElement.style.left = `${x}px`;
+        shapeElement.style.top = `${y}px`;
+
+        // Add drag-and-drop functionality
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        shapeElement.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - shapeElement.getBoundingClientRect().left;
+            offsetY = e.clientY - shapeElement.getBoundingClientRect().top;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const newX = e.clientX - offsetX - containerRect.left;
+                const newY = e.clientY - offsetY - containerRect.top;
+
+                shapeElement.style.left = `${newX}px`;
+                shapeElement.style.top = `${newY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        document.getElementById(containerId).appendChild(shapeElement);
+    }
+
+    // Initial shapes in each container
+    for (let i = 0; i < 5; i++) {
+        createRandomShape('circleContainer');
+        createRandomShape('squareContainer');
+        createRandomShape('triangleContainer');
+    }
+
+    document.getElementById('checkButton').addEventListener('click', () => {
+        checkPlacement('circleContainer');
+        checkPlacement('squareContainer');
+        checkPlacement('triangleContainer');
+    });
+
+    document.getElementById('resetButton').addEventListener('click', () => {
+        resetContainer('circleContainer');
+        resetContainer('squareContainer');
+        resetContainer('triangleContainer');
+    });
+
+    function checkPlacement(containerId) {
+        const containerRect = document.getElementById(containerId).getBoundingClientRect();
+        const shapes = document.querySelectorAll(`#${containerId} .shape`);
+
+        let allShapesInsideContainer = true;
+
+        shapes.forEach(shape => {
+            const shapeRect = shape.getBoundingClientRect();
+
+            if (
+                shapeRect.left < containerRect.left ||
+                shapeRect.right > containerRect.right ||
+                shapeRect.top < containerRect.top ||
+                shapeRect.bottom > containerRect.bottom
+            ) {
+                allShapesInsideContainer = false;
+            }
+        });
+
+        const containerElement = document.getElementById(containerId);
+
+        if (allShapesInsideContainer && shapes.length === 5) {
+            containerElement.classList.add('correct');
+            containerElement.classList.remove('incorrect');
+        } else {
+            containerElement.classList.add('incorrect');
+            containerElement.classList.remove('correct');
+        }
+    }
+
+    function resetContainer(containerId) {
+        const containerElement = document.getElementById(containerId);
+        containerElement.classList.remove('correct', 'incorrect');
+        containerElement.innerHTML = '';
+
+        // Add the label back after resetting
+        const label = document.createElement('label');
+        label.textContent = getLabel(containerId);
+        containerElement.appendChild(label);
+
+        // Add new random shapes to the container
+        for (let i = 0; i < 5; i++) {
+            createRandomShape(containerId);
+        }
+    }
+
+    function getLabel(containerId) {
+        switch (containerId) {
+            case 'circleContainer':
+                return 'Put Circles Here';
+            case 'squareContainer':
+                return 'Put Squares Here';
+            case 'triangleContainer':
+                return 'Put Triangles Here';
+            default:
+                return '';
+        }
+    }
+</script>
+
+</body>
+</html>

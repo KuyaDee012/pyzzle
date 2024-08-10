@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PYZZLE - Color Module</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        .footer {
+           position: fixed;
+           left: 10;
+           bottom: 0;
+           height: 3%;
+           width: 90%;
+           background-color: rgb(173, 180, 243);
+           color: rgb(82, 82, 82);
+           text-align: center;
+        }
+        .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 130px;
+        }
+        .btn-3d {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4d4dff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.btn-3d:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: inherit;
+  z-index: -1;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-3d:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d:hover:before {
+  transform: translateY(3px);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                 <img src="img/logo2.png"
+                    width="75" 
+                    height="70" />
+            <div class="sidebar-brand-text mx-3">PYZZLE</div>
+        </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Home -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Home</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Modules</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="m1.html">1: Events</a>
+                        <a class="collapse-item" href="m2.html">2: Display</a>
+                        <a class="collapse-item" href="m3.html">3: Color</a>
+                        <a class="collapse-item" href="mod.html">4: Shape</a>
+                        <a class="collapse-item" href="QUIZ.html">Test Your Knowledge</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Workstation</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="beginner.html">Beginner</a>
+                        <a class="collapse-item" href="moderate.html">Moderate</a>
+                        <a class="collapse-item" href="hard.html">Hard</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Videos</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Pygame Installation Guide:</h6>
+                        <a class="collapse-item" href="login.html">Install Pygame</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Pygame Tutorial:</h6>
+                        <a class="collapse-item" href="yt.html">YouTube Videos</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="rate.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Rate Us</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>About Us</span></a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <form
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Profile
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Activity Log
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">
+                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Activity Log
+                        </a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+                
+                    
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <button class="btn-3d" onclick="history.back()">Back</button>
+                    <!-- Page Heading -->
+                    <div class="col-lg-6">
+                        <div class="tabs">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-2">
+                                        <nav class="nav nav-pills nav-justified">
+                                            <a class="nav-link active" href="#tab_a" data-toggle="pill">rectangle</a>
+                                            <a class="nav-link" href="#tab_b" data-toggle="pill">polygon</a>
+                                            <a class="nav-link" href="#tab_c" data-toggle="pill">circle</a>
+                                            <a class="nav-link" href="#tab_d" data-toggle="pill">ellipse</a>
+                                            <a class="nav-link" href="#tab_e" data-toggle="pill">arc</a>
+                                            <a class="nav-link" href="#tab_f" data-toggle="pill">line</a>
+                                            <a class="nav-link" href="#tab_g" data-toggle="pill">.aaline</a>
+                                          </nav>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab_a">
+                                                <div class="card mb-4 py-3 border-left-primary " style="width: 60rem;" >
+                                                    <div class="card-body">
+                                                        <h1 style="font: size 3vw"><p style="color:aqua;font-family:'Courier New'"><b>pygame.draw.rect</b></p></h1>
+                                                        <img src="img/rect.jpeg" alt="Smiley face" width="250" height="150" style="vertical-align:middle">
+                                                            <p style="font-family:'Courier New'">- draw a rectangle shape</p>
+                                                            <br>
+                                                            <p style="font-family:'Courier New'">- rect(Surface, color, Rect, width=0) -> Rect </p>
+                                                            <br>
+                                                            <p style="font-family:'Courier New'">- Draws a rectangular shape on the Surface. The given Rect is the area of the rectangle. The width argument is the thickness to draw the outer edge. If width is zero then the rectangle will be filled.</p>
+                                                            <br>     
+                                                            <p style="font-family:'Courier New'">- Keep in mind the Surface.fill() method works just as well for drawing filled rectangles. In fact the Surface.fill() can be hardware accelerated on some platforms with both software and hardware display modes.</p>             
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_b">
+                                                <div class="card mb-4 py-3 border-left-secondary" style="width: 60rem;">
+                                                    <div class="card-body">
+                                                        <h1 style="font: size 3vw"><p style="color:rgb(0, 255, 115)"><b>pygame.draw.polygon()</b></p></h1>
+                                                        <img src="img/poly.jpg" alt="Smiley face" width="350" height="200" style="vertical-align:middle">
+                                                            <div>- draw a shape with any number of sides</div>
+                                                            <br>
+                                                            <div>- polygon(Surface, color, pointlist, width=0) -> Rect
+                                                            </div>
+                                                            <br>
+                                                            <div>- Draws a polygonal shape on the Surface. The pointlist argument is the vertices of the polygon. The width argument is the thickness to draw the outer edge. If width is zero then the polygon will be filled.                                </div>
+                                                            <br>     
+                                                            <div>- For aapolygon, use aalines with the ‘closed’ parameter.                                    </div>             
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_c">
+                                                <div class="card mb-4 py-3 border-left-success" style="width: 60rem;" style="height: 50rem;">
+                                                    <div class="card-body">
+                                                        <h1 style="font: size 3vw"><p style="color:rgb(102, 255, 0)"><b>pygame.draw.circle()</b></p></h1>
+                                                        <img src="img/circle.jpg" alt="Smiley face" width="200" height="200" style="vertical-align:middle">
+                                                            <div>- draw a circle around a point
+                                                            </div>
+                                                            <br>
+                                                            <div>- circle(Surface, color, pos, radius, width=0) -> Rect
+                                                            </div>
+                                                            <br>
+                                                            <div>- Draws a circular shape on the Surface. The pos argument is the center of the circle, and radius is the size. The width argument is the thickness to draw the outer edge. If width is zero then the circle will be filled.
+                                                            </div>          
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_d">
+                                                <div class="card mb-4 py-3 border-left-info"style="width: 60rem;" style="height: 50rem;">
+                                                    <div class="card-body">
+                                                        <h1 style="font: size 3vw"><p style="color:rgb(179, 255, 0)"><b>pygame.draw.ellipse()</b></p></h1>
+                                                        <img src="img/elli.png" alt="Smiley face" width="250" height="150" style="vertical-align:middle">
+                                                        <div>- draw a round shape inside a rectangle
+                                                        </div>
+                                                        <br>
+                                                        <div>- ellipse(Surface, color, Rect, width=0) -> Rect
+                                                        </div>
+                                                        <br>
+                                                        <div>- Draws an elliptical shape on the Surface. The given rectangle is the area that the circle will fill. The width argument is the thickness to draw the outer edge. If width is zero then the ellipse will be filled.
+                                                        </div>  
+                                                    </div>
+                                                    </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_e">
+                                                <div class="card mb-4 py-3 border-left-warning" style="width: 60rem;" style="height: 50rem;">
+                                                    <div class="card-body">
+                                                        <h1 style="font: size 3vw"><p style="color:rgb(0, 110, 255)"><b>pygame.draw.arc()</b></p></h1>
+                                                        <img src="img/arc.png" alt="Smiley face" width="250" height="150" style="vertical-align:middle">
+                                                        <div>- draw a partial section of an ellipse
+                                                        </div>
+                                                        <br>
+                                                        <div>- arc(Surface, color, Rect, start_angle, stop_angle, width=1) -> Rect
+                                                        </div>
+                                                        <br>
+                                                        <div>- Draws an elliptical arc on the Surface. The rect argument is the area that the ellipse will fill. The two angle arguments are the initial and final angle in radians, with the zero on the right. The width argument is the thickness to draw the outer edge.
+                                                        </div>   
+                                                    </div>
+                                                    </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_f">
+                                                <div class="card mb-4 py-3 border-left-danger" style="width: 60rem;" style="height: 50rem;">
+                                                    <div class="card-body">
+                                                        <h1 style="font: size 3vw"><p style="color:rgb(0, 4, 255)"><b>pygame.draw.line()</b></p></h1>
+                                                        <img src="img/line.png" alt="Smiley face" width="250" height="150" style="vertical-align:middle">
+                                                        <div>- draw a straight line segment
+                                                        </div>
+                                                        <br>
+                                                        <div>- line(Surface, color, start_pos, end_pos, width=1) -> Rec</div>
+                                                        <br>
+                                                        <div>- Draw a straight line segment on a Surface. There are no endcaps, the ends are squared off for thick lines.
+                                                        </div>  
+                                                    </div>
+                                                    </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_g">
+                                                <div class="card mb-4 py-3 border-left-dark" style="width: 60rem;" style="height: 50rem;">
+                                                    <h1 style="font: size 3vw"><p style="color:rgb(255, 0, 234)"><b>pygame.draw.aaline()</b></p></h1>
+
+                                                    <div>- draw a connected sequence of antialiased lines
+                                                    </div>
+                                                    <br>
+                                                    <div>- aalines(Surface, color, closed, pointlist, blend=1) -> Rect
+                                                    </div>
+                                                    <br>     
+                                                    <div>- Draws a sequence on a surface. You must pass at least two points in the sequence of points. The closed argument is a simple Boolean and if true, a line will be draw between the first and last points. The Boolean blend argument set to true will blend the shades with existing shades instead of overwriting them. This function accepts floating point values for the end points.
+                                                    </div>    
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="footer">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; PYZZLE 2023</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
